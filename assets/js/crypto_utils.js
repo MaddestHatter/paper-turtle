@@ -1643,17 +1643,16 @@ return{_strlen:lb,_ge_mul8:Va,_keccak:db,_ge_scalarmult:Ta,_ge_fromfe_frombytes_
 
 var salt = '4721283fee2db41e1f2fc50ea9f6d783'; // IMPORTANT: never change it, otherwise it will be impossible to restore previously generated wallets!
 var config = {
-    coinUnitPlaces: 12,
-    coinSymbol: 'TRTL',
-    coinName: 'TurtleCoin',
-    coinUriPrefix: 'turtlecoin:',
-    addressPrefix: 3914525
+    coinUnitPlaces: 5,
+    coinSymbol: 'XLS',
+    coinName: 'Excelsior',
+    coinUriPrefix: 'excelsior:',
+    addressPrefix: 0x2935
 };
 var cnUtil = (function(initConfig) {
     //var config = $.extend({}, initConfig);
     var config = initConfig;
-    config.coinUnits = new JSBigInt(10).pow(config.coinUnitPlaces);
-
+    config.coinUnits = new JSBigInt(10).pow(config.coinUnitPlaces); // 10^5 = 100000
     var HASH_STATE_BYTES = 200;
     var HASH_SIZE = 32;
     var ADDRESS_CHECKSUM_SIZE = 4;
