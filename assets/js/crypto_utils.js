@@ -2104,7 +2104,7 @@ var cnUtil = (function(initConfig) {
         }
 
         // Quick check to see that it's valid
-        if((address_b58.length != 97 && address_b58.length != 185) || address_b58.substring(0,4) != "XL") {
+        if((address_b58.length != 97 && address_b58.length != 185) || address_b58.substring(0,2) != "XL") {
             return output;
         }
 
