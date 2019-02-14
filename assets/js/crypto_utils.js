@@ -2181,8 +2181,8 @@ var cnUtil = (function(initConfig) {
         }
 
         output.address = address_b58;
-        output.view = view;
-        output.spend = spend;
+        output.view = view; 		// public view key 
+        output.spend = spend  		// public spend key 	
         output.noprefix = address_no_prefix;
 
         return output;
