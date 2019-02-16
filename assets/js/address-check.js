@@ -21,6 +21,10 @@ function checkAddress() {
     notification.innerHTML = '<div class="column is-12 notification is-danger has-text-centered">Invalid XLS address!</div>';
     return;
   }
+  else {
+    notification.innerHTML = '<div class="column is-12 notification is-success has-text-centered">Valid XLS address!</div>';
+  }
+  
 
   var icon = document.createElement("canvas");
   icon.width = 256;
@@ -42,6 +46,10 @@ function checkAddress() {
   qr_widget.innerHTML = qr.createImgTag(qr_size, 0);
 
   // remove some unimportant info
+  delete address_info.address;
+  delete address_info.integrated_id;
+  delete address_info.view;
+  delete address_info.spend;
   delete address_info.noprefix;
   details_container.innerHTML = JSON.stringify(address_info,null,2);
 }
